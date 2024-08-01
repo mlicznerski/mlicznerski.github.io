@@ -17,8 +17,8 @@
 <script language="JavaScript">
 
     var Parent = window;
-    for (; Parent != Parent.parent && Parent.dialogRoot == undefined; Parent = Parent.parent);
-    if (Parent.dialogRoot != undefined) {
+    for (; Parent != Parent?.parent && Parent?.dialogRoot == undefined; Parent = Parent?.parent);
+    if (Parent?.dialogRoot != undefined) {
         console.log('has root');
     } else {
         document.querySelector('#status').textContent = 'Works!';
