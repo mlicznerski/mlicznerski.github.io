@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    <h1 id="status">Not working</h1>
 </body>
 
 </script>
@@ -14,25 +15,15 @@
 </body>
 
 <script language="JavaScript">
-    
+
     var Parent = window;
-    for ( ; Parent!=Parent.parent && Parent.dialogRoot==undefined; Parent=Parent.parent );
-    if ( Parent.dialogRoot != undefined ) {
-      if ( Parent.getStateCloseConfirm() ) {
-        Parent.clearCloseConfirm();
-        Parent.returnValue = "alert( '!E1 err_timeout' ); parent.NeedCloseWarning = false; parent.close();";
-      }
-      else {
-        Parent.returnValue = "alert( '!E2 err_timeout' );" + ";";
-            }
-           Parent.close();
-        }
-    else {
-      window.status = '!E3 err_timeout';
-      window.alert( '!E4 err_timeout' );
-      ;
+    for (; Parent != Parent.parent && Parent.dialogRoot == undefined; Parent = Parent.parent);
+    if (Parent.dialogRoot != undefined) {
+        console.log('has root');
+    } else {
+        document.querySelector('#status').textContent = 'Works!';
     }
-    
+
 </script>
 
 <noscript>
