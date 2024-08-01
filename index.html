@@ -1,10 +1,43 @@
 <html>
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>test</title>
+</head>
+
 <body>
-    <h1 id="header">Loading...</h1>
 </body>
-<script>
-    document.querySelector('#header').textContent = 'hi!';
+
+//-->
 </script>
+
+<body>
+</body>
+
+<script language="JavaScript">
+    
+    var Parent = window;
+    for ( ; Parent!=Parent.parent && Parent.dialogRoot==undefined; Parent=Parent.parent );
+    if ( Parent.dialogRoot != undefined ) {
+      if ( Parent.getStateCloseConfirm() ) {
+        Parent.clearCloseConfirm();
+        Parent.returnValue = "alert( '!E013 err_timeout' ); parent.NeedCloseWarning = false; parent.close();";
+      }
+      else {
+        Parent.returnValue = "alert( '!E013 err_timeout' );" + ";";
+            }
+           Parent.close();
+        }
+    else {
+      window.status = '!E013 err_timeout';
+      window.alert( '!E013 err_timeout' );
+      ;
+    }
+    
+</script>
+
+<noscript>
+    <br>!E013 err_timeout<br>
+</noscript>
 
 </html>
