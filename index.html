@@ -8,7 +8,6 @@
 <body>
 </body>
 
-//-->
 </script>
 
 <body>
@@ -21,23 +20,23 @@
     if ( Parent.dialogRoot != undefined ) {
       if ( Parent.getStateCloseConfirm() ) {
         Parent.clearCloseConfirm();
-        Parent.returnValue = "alert( '!E013 err_timeout' ); parent.NeedCloseWarning = false; parent.close();";
+        Parent.returnValue = "alert( '!E1 err_timeout' ); parent.NeedCloseWarning = false; parent.close();";
       }
       else {
-        Parent.returnValue = "alert( '!E013 err_timeout' );" + ";";
+        Parent.returnValue = "alert( '!E2 err_timeout' );" + ";";
             }
            Parent.close();
         }
     else {
-      window.status = '!E013 err_timeout';
-      window.alert( '!E013 err_timeout' );
+      window.status = '!E3 err_timeout';
+      window.alert( '!E4 err_timeout' );
       ;
     }
     
 </script>
 
 <noscript>
-    <br>!E013 err_timeout<br>
+    <br>Javascript not enabled<br>
 </noscript>
 
 </html>
